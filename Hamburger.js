@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Animated,
     TouchableWithoutFeedback,
-    Text,
-    View
 } from 'react-native';
 
 export default class Hamburger extends Component {
@@ -186,38 +184,46 @@ export default class Hamburger extends Component {
     }
 
 
-    _animate() {
-        setTimeout(()=> {
-            this.setState({
-                active: this.props.active
-            });
-        }, 0);
-        const { props: { type } } = this;
-        type=="spinArrow" ? this.spinArrow() :
-        type=="arrow" ? this.arrow() :
-        type=="spinCross" ? this.spinCross() :
-        this.cross();
+    _animate(active) {
+        this.setState({active});
+        const {props: {type}} = this;
 
-
-    }
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.active !== this.state.active) {
-            this._animate();
+        switch (type) {
+            case "spinArrow":
+                this.spinArrow();
+                break;
+            case "arrow":
+                this.arrow();
+                break;
+            case "spinCross":
+                this.spinCross();
+                break;
+            default:
+                this.cross();
+                break;
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.active !== this.state.active) {
+            this._animate(nextProps.active);
+        }
+    }
+
     componentDidMount() {
-        setTimeout(()=> {
+        setTimeout(() => {
             this.setState({
                 active: this.props.active
             });
         }, 0);
     }
+
     render() {
 
-        const { props: { color, type } } = this;
+        const {props: {color, type}} = this;
 
         if (this.props.active) {
-            if (type=="spinArrow") {
+            if (type == "spinArrow") {
                 this.containerAnim = this.containerAnim || new Animated.Value(1);
                 this.topBar = this.topBar || new Animated.Value(1);
                 this.bottomBar = this.bottomBar || new Animated.Value(1);
@@ -226,7 +232,7 @@ export default class Hamburger extends Component {
                 this.bottomBarMargin = this.bottomBarMargin || new Animated.Value(2);
                 this.topBarMargin = this.topBarMargin || new Animated.Value(-2);
             }
-            else if (type=="arrow") {
+            else if (type == "arrow") {
                 this.topBar = this.topBar || new Animated.Value(1);
                 this.bottomBar = this.bottomBar || new Animated.Value(1);
                 this.width = this.width || new Animated.Value(14);
@@ -234,7 +240,7 @@ export default class Hamburger extends Component {
                 this.bottomBarMargin = this.bottomBarMargin || new Animated.Value(2);
                 this.topBarMargin = this.topBarMargin || new Animated.Value(-2);
             }
-            else if (type=="spinCross") {
+            else if (type == "spinCross") {
                 this.containerAnim = this.containerAnim || new Animated.Value(1);
                 this.topBar = this.topBar || new Animated.Value(0.9);
                 this.bottomBar = this.bottomBar || new Animated.Value(0.9);
@@ -260,21 +266,25 @@ export default class Hamburger extends Component {
 
         return (
             <TouchableWithoutFeedback
-                onPress={()=> {this.props.onPress ? this.props.onPress() : undefined, this._animate()}}>
+                onPress={() => {
+                    this.props.onPress ? this.props.onPress() : undefined
+                }}>
                 <Animated.View style={{
                     width: 35,
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: 35,
                     transform: [
-                        {rotate: this.containerAnim.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [
-                                '0deg', '360deg'
-                            ],
-                        })}
+                        {
+                            rotate: this.containerAnim.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [
+                                    '0deg', '360deg'
+                                ],
+                            })
+                        }
                     ]
-                    }}>
+                }}>
                     <Animated.View style={{
                         height: 3,
                         marginLeft: this.marginLeft,
@@ -282,20 +292,23 @@ export default class Hamburger extends Component {
                         marginBottom: this.topBarMargin,
                         backgroundColor: color ? color : 'black',
                         transform: [
-                            {rotate: this.topBar.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [
-                                    '0deg', '-50deg'
-                                ],
-                            })}
+                            {
+                                rotate: this.topBar.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [
+                                        '0deg', '-50deg'
+                                    ],
+                                })
+                            }
                         ]
-                    }} />
+                    }}/>
                     <Animated.View style={{
                         height: 3,
                         width: 25,
-                        opacity:this.middleBarOpacity,
+                        opacity: this.middleBarOpacity,
                         backgroundColor: color ? color : 'black',
-                        marginTop: 4}} />
+                        marginTop: 4
+                    }}/>
                     <Animated.View style={{
                         height: 3,
                         marginLeft: this.marginLeft,
@@ -303,14 +316,16 @@ export default class Hamburger extends Component {
                         backgroundColor: color ? color : 'black',
                         marginTop: this.bottomBarMargin,
                         transform: [
-                            {rotate: this.bottomBar.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [
-                                    '0deg', '50deg'
-                                ],
-                            })}
+                            {
+                                rotate: this.bottomBar.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [
+                                        '0deg', '50deg'
+                                    ],
+                                })
+                            }
                         ]
-                    }} />
+                    }}/>
                 </Animated.View>
             </TouchableWithoutFeedback>
         );
