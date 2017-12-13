@@ -1,5 +1,5 @@
 {
-  "name": "react-native-hamburger",
+  "name": "react-native-animated-hamburger",
   "version": "0.0.2",
   "description": "Hamburger menu for react-native!",
   "main": "index.js",
@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/sankhadeeproy007/react-native-hamburger.git"
+    "url": "git+ssh://git@github.com/azeemhassni/react-native-animated-hamburger.git"
   },
   "keywords": [
     "react-native",
     "hamburger"
   ],
-  "author": "Sankhadeep Roy",
+  "author": "Azeem Hassni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sankhadeeproy007/react-native-hamburger/issues"
+    "url": "https://github.com/azeemhassni/react-native-animated-hamburger/issues"
   },
-  "homepage": "https://github.com/sankhadeeproy007/react-native-hamburger#readme"
+  "homepage": "https://github.com/azeemhassni/react-native-animated-hamburger#readme"
 }
