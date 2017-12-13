@@ -35,6 +35,4 @@ import Hamburger from 'react-native-animated-hamburger';
 | active  | Determines the activation state of Hamburger.                             | Boolean  | false     |   |
 
 
-
-
 *this repository is a fork of `react-native-hamburger`*
