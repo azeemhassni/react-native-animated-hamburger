@@ -28,11 +28,16 @@ import Hamburger from 'react-native-animated-hamburger';
 ```
 
 ## Props
-| Prop    | Description                                                               | Typ      | Default   |   |
-|---------|---------------------------------------------------------------------------|----------|-----------|---|
-| type    | Type of Animation   Available types: {arrow, spinArrow, cross, spinCross} | String   | cross     |   |
-| onPress | Called when the hamburger gets pressed                                    | Function | undefined |   |
-| active  | Determines the activation state of Hamburger.                             | Boolean  | false     |   |
+| Prop    | Description                                                               | Typ      | Default   |
+|---------|---------------------------------------------------------------------------|----------|-----------|
+| type    | Type of Animation   Available types: {arrow, spinArrow, cross, spinCross} | String   | cross     |
+| onPress | Called when the hamburger gets pressed                                    | Function | undefined |
+| active  | Determines the activation state of Hamburger.                             | Boolean  | false     |
 
 
-*this repository is a fork of `react-native-hamburger`*
+## Todo
+- [ ] Add an example of integrating with Redux.
+- [ ] Add an example of integrating with NativeBase drawer.
+
+
+* This repository is a fork of [`react-native-hamburger`](https://github.com/GeekyAnts/react-native-hamburger)*
