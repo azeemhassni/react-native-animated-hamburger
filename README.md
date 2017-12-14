@@ -30,7 +30,7 @@ import Hamburger from 'react-native-animated-hamburger';
 ## Props
 | Prop    | Description                                                               | Typ      | Default   |
 |---------|---------------------------------------------------------------------------|----------|-----------|
-| type    | Type of Animation   Available types: {arrow, spinArrow, cross, spinCross} | String   | cross     |
+| type    | Type of Animation   Available types: {**arrow, spinArrow, cross, spinCross**} | String   | cross     |
 | onPress | Called when the hamburger gets pressed                                    | Function | undefined |
 | active  | Determines the activation state of Hamburger.                             | Boolean  | false     |
 
@@ -42,5 +42,6 @@ import Hamburger from 'react-native-animated-hamburger';
 
 
  ---
+
 
 *This repository is a fork of [`react-native-hamburger`](https://github.com/GeekyAnts/react-native-hamburger)*
