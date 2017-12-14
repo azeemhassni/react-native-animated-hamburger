@@ -21,7 +21,6 @@ import Hamburger from 'react-native-animated-hamburger';
 <Hamburger type="cross" active={this.state.active} onPress={() => {
               this.setState({ active: !this.state.active })
           }}
-          style={{marginLeft: 10}}
           underlayColor="transparent"
           >
  </Hamburger>
