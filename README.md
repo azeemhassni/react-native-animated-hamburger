@@ -18,7 +18,7 @@ npm add react-native-animated-hamburger
 ...
 import Hamburger from 'react-native-animated-hamburger';
 ...
-<Hamburger type="cross" active={this.state.isActive} onPress={() => {
+<Hamburger type="cross" active={this.state.active} onPress={() => {
               this.setState({ active: !this.state.active })
           }}
           style={{marginLeft: 10}}
