@@ -40,4 +40,7 @@ import Hamburger from 'react-native-animated-hamburger';
 - [ ] Add an example of integrating with NativeBase drawer.
 
 
-* This repository is a fork of [`react-native-hamburger`](https://github.com/GeekyAnts/react-native-hamburger)*
+
+ ---
+
+*This repository is a fork of [`react-native-hamburger`](https://github.com/GeekyAnts/react-native-hamburger)*
