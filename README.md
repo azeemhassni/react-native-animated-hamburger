@@ -10,7 +10,7 @@ npm install react-native-animated-hamburger --save
 
 Yarn
 ```bash
-npm add react-native-animated-hamburger
+yarn add react-native-animated-hamburger
 ```
 
 ## Usage
