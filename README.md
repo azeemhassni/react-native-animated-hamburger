@@ -2,6 +2,8 @@
 Animated fully configurable hamburger menu for react-native!
 ![alt tag](gif/hamburger.gif)
 
+[`original repository`](https://github.com/GeekyAnts/react-native-hamburger)
+
 ## Installation
 NPM
 ```bash
