@@ -204,7 +204,7 @@ export default class Hamburger extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.active !== this.state.active) {
             this._animate(nextProps.active);
         }
