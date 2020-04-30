@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-hamburger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hamburger menu for react-native!",
   "main": "index.js",
   "scripts": {
